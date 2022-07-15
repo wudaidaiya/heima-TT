@@ -95,7 +95,7 @@ export default {
         // console.log(res)
         console.log(res.data.data)
         // 登陆成功返回
-        this.$router.push('./home')
+        this.$router.push('./profile')
         this.$toast.success('登陆成功')
       } catch (error) {
         console.log(error)
