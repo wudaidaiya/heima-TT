@@ -3,31 +3,33 @@
     <router-view></router-view>
     <!-- 底部导航 -->
     <van-tabbar route>
-      <van-tabbar-item to='/home'>
+      <van-tabbar-item to="/home">
         <template #icon>
           <span class="toutiao toutiao-shouye"></span>
           <span class="text">首页</span>
         </template>
       </van-tabbar-item>
 
-      <van-tabbar-item to='/video'>
+      <van-tabbar-item to="/video">
         <template #icon>
           <span class="toutiao toutiao-shipin"></span>
           <span class="text">视频</span>
         </template>
       </van-tabbar-item>
 
-      <van-tabbar-item to='/qa'>
+      <van-tabbar-item to="/qa">
         <template #icon>
           <span class="toutiao toutiao-wenda"></span>
           <span class="text">问答</span>
         </template>
       </van-tabbar-item>
 
-      <van-tabbar-item to='/profile'>
+      <van-tabbar-item to="/profile">
         <template #icon>
           <span class="toutiao toutiao-wode"></span>
-          <span class="text">我的</span>
+          <span class="text">{{
+            !!$store.state.user.token ? '我的' : '未登录'
+          }}</span>
         </template>
       </van-tabbar-item>
     </van-tabbar>
@@ -37,8 +39,7 @@
 <script>
 export default {
   data() {
-    return {
-    }
+    return {}
   }
 }
 </script>

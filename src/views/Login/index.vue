@@ -91,7 +91,7 @@ export default {
       try {
         const res = await login(this.mobile, this.code)
         // 存储token
-        this.$store.commit('setUer', res.data.data)
+        this.$store.commit('setUser', res.data.data)
         // console.log(res)
         console.log(res.data.data)
         // 登陆成功返回
@@ -129,9 +129,6 @@ export default {
           }
         }
       }
-    },
-    increment() {
-      this.$store.commit('setNumber', 1)
     }
   }
 }
