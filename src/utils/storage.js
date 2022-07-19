@@ -1,5 +1,5 @@
 class Storage {
-  // key HEIMA_TOUTIAO_TOKEN   value payload
+  // key HEIMA_TOUTIAO_TOKEN 存储的名字  value payload 存储的值
   set(key, value) {
     if (typeof value === 'object') {
       value = JSON.stringify(value)
