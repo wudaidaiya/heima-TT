@@ -2,7 +2,7 @@
   <div>
     <van-nav-bar class="navbar">
       <template #title>
-        <van-button round>
+        <van-button round @click="$router.push('/search')">
           <van-icon name="search" />
           搜索
         </van-button>
@@ -68,7 +68,6 @@ export default {
 
         // this.myChannels = data.data.channels
         if (!this.isLogin) {
-          console.log(this.login)
           // 如果你是离线状态
           // 1 如果本地储存有数据直接用本地储存的数据
           // 2 如果本地储存没有数据 发送请求获取默认频道数据
