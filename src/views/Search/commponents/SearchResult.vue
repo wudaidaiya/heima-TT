@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <van-cell v-for="item in result" :key="item.id" class="listAll" :title="item.title" /> -->
     <van-cell
       class="listAll"
       v-for="item in result"
@@ -14,8 +13,6 @@
 export default {
   data() {
     return {
-      // error: false,
-      // loading: false
     }
   },
   props: {
@@ -23,13 +20,7 @@ export default {
       default: () => []
     }
   }
-  // methods: {
-  //   onLoad() {
-  //     fetchSomeThing().catch(() => {
-  //       this.error = true
-  //     })
-  //   }
-  // }
+
 }
 </script>
 
