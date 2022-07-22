@@ -1,7 +1,11 @@
 <template>
   <div>
     <van-cell-group>
-      <van-cell v-for="(item, index) in highlightData" :key="index">
+      <van-cell
+        v-for="(item, index) in highlightData"
+        :key="index"
+        @click="clickFn(index)"
+      >
         <template #icon>
           <van-icon name="search" class="search-icon"></van-icon>
         </template>
@@ -48,6 +52,12 @@ export default {
       } catch (error) {
         console.log(error)
       }
+    },
+    // 拿到原数组的值传过去
+    clickFn(index) {
+      const item = this.suggestions[index]
+      console.log(item)
+      this.$emit('clickFn', item)
     }
   },
   computed: {

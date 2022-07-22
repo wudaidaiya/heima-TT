@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="Details(details)">
     <!-- 没有图片 -->
     <!-- 条件渲染 -->
     <!-- 动态绑定数据 articleInfo.title  articleDesc-->
@@ -51,6 +51,10 @@ export default {
     articleInfo: {
       type: Object,
       required: true
+    },
+    details: {
+      type: String,
+      required: true
     }
   },
   computed: {
@@ -61,6 +65,18 @@ export default {
       //   名字 评论 时间
       const relativeTime = dayjs(srt.pubdate).fromNow()
       return `${srt.aut_name} 阅读${srt.comm_count} 时间:${relativeTime}`
+    }
+  },
+  methods: {
+    // 进入详情
+    Details(id) {
+      this.$router.push({
+        path: '/details',
+        query: {
+          id: id
+        }
+      })
+      console.log(id)
     }
   }
 }

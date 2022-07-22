@@ -1,6 +1,7 @@
 class Storage {
   // key HEIMA_TOUTIAO_TOKEN 存储的名字  value payload 存储的值
   set(key, value) {
+    // 将数组。对象如果他是对象就转换为JSON字符串
     if (typeof value === 'object') {
       value = JSON.stringify(value)
     }
@@ -23,5 +24,5 @@ class Storage {
   }
 }
 const storage = new Storage()
-
+// 默认导出
 export default storage
