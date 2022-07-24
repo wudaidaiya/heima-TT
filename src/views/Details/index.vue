@@ -531,8 +531,6 @@ img {
 .Collection {
   background-color: #fff;
 }
-.delCollection {
-}
 // 回复评论
 .oncomment {
   z-index: 999;
