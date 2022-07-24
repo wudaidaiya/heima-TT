@@ -98,7 +98,7 @@ export default {
         if (index !== -1) {
           this.str.splice(index, 1)
         }
-        this.str.push(this.keywords)
+        this.str.unshift(this.keywords)
         storage.set('Keywordslist', this.str)
         // console.log(this.str)
       } catch (error) {
@@ -107,12 +107,6 @@ export default {
     },
     async loadNextPage() {
       try {
-        // 模拟错误
-        // if (Math.random() < 0.7) {
-        //   //  throw抛出
-        //   throw new Error('错误了')
-        // }
-        // 滚动条触底 加载下一页数据
         const res = await getSearchResult(this.page, this.per_page)
         if (!res.data.data.page) {
           this.finished = true
@@ -121,7 +115,7 @@ export default {
         if (this.isLoading) {
           this.result.unshift(...res.data.data.results)
         } else {
-          // 将第n页的数据，放在articles
+          // 将第n页的数据，放在result
           this.result.push(...res.data.data.results)
         }
         // 更新页数 页码

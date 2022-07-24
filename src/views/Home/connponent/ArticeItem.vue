@@ -64,7 +64,7 @@ export default {
       const srt = this.articleInfo
       //   名字 评论 时间
       const relativeTime = dayjs(srt.pubdate).fromNow()
-      return `${srt.aut_name} 阅读${srt.comm_count} 时间:${relativeTime}`
+      return `${srt.aut_name} 评论：${srt.comm_count} 时间:${relativeTime}`
     }
   },
   methods: {
